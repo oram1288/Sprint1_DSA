@@ -32,10 +32,20 @@ public class User {
     }
 
     // Add a task
-
+    public void addTask(String description) {
+        toDoList.addTask(description);
+    }
 
     // Mark task as completed
-
+    public void markTaskCompleted(String description) {
+        if (!toDoList.markTaskCompleted(description)) {
+            System.out.println("Task not found: " + description);
+        }
+    }
 
     // Print all tasks
+    public void printTasks() {
+        System.out.println("Task for " + fName + " " + lName + ":");
+        toDoList.printTasks();
+    }
 }
